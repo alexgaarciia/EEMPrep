@@ -29,7 +29,7 @@ def remove_rayleigh(eem, ex_axis, em_axis, half_width=25):
     ValueError
         If axis lengths do not match the corresponding EEM dimensions.
     """
-    eem = eem.copy()
+    eem = eem.copy().astype(float)
 
     if eem.ndim == 2:
         if eem.shape != (len(ex_axis), len(em_axis)):
@@ -55,6 +55,6 @@ def remove_rayleigh(eem, ex_axis, em_axis, half_width=25):
 
     mask = below_ex | (np.abs(delta) <= half_width) | second_order
 
-    eem[..., mask] = 0
+    eem[..., mask] = np.nan
 
     return eem
