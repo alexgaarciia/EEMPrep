@@ -29,7 +29,7 @@ def subtract_blank(eem, blank_scans, clip_negative=True):
     else:
         blank = blank_scans
 
-    if eem.shape != blank.shape:
+    if eem.shape[-2:] != blank.shape:
         raise ValueError(f"Shape mismatch: eem {eem.shape} vs blank {blank.shape}")
 
     result = eem - blank
