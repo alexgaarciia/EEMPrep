@@ -7,10 +7,13 @@ def subtract_blank(eem, blank_scans, clip_negative=True):
     Parameters
     ----------
     eem : np.ndarray
-        EEM matrix of shape (n_emission, n_excitation).
+        EEM matrix of shape (n_ex, n_em), or a stack of EEMs of shape
+        (n_samples, n_ex, n_em).
     blank_scans : np.ndarray
-        Single blank of shape (n_emission, n_excitation) or a stack of blanks
-        of shape (n_scans, n_emission, n_excitation). Multiple blanks are averaged.
+        Single blank of shape (n_ex, n_em) or a stack of blanks
+        of shape (n_scans, n_ex, n_em). Multiple blanks are averaged.
+    clip_negative : bool, optional
+        If True (default), negative values after subtraction are set to 0.
 
     Returns
     -------
