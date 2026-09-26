@@ -1,11 +1,11 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=77.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pyeem"
+name = "eemprep"
 version = "0.1.0"
-description = "Modular EEM preprocessing library for biomedical spectroscopy"
+description = "Modular EEM (Excitation-Emission Matrix) preprocessing library for biomedical spectroscopy"
 readme = "README.md"
 requires-python = ">=3.9"
 
@@ -13,12 +13,37 @@ authors = [
   { name = "Alejandro Leonardo García Navarro" }
 ]
 
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
+
+keywords = [
+  "spectroscopy",
+  "fluorescence",
+  "EEM",
+  "excitation-emission matrix",
+  "preprocessing",
+  "Raman normalization",
+  "scatter removal",
+  "chemometrics",
+]
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Chemistry",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
 
 dependencies = [
-  "numpy>=1.22",
-  "scipy>=1.8"
+  "numpy>=2.0"
 ]
+
+[project.urls]
+Homepage = "https://github.com/alexgaarciia/EEMPrep"
+Repository = "https://github.com/alexgaarciia/EEMPrep"
+Issues = "https://github.com/alexgaarciia/EEMPrep/issues"
 
 [project.optional-dependencies]
 dev = [

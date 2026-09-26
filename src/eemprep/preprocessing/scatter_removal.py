@@ -2,9 +2,9 @@ import numpy as np
 
 
 def remove_rayleigh(eem, ex_axis, em_axis, half_width=25):
-    """Zero out Rayleigh scatter bands (1st and 2nd order) from an EEM.
+    """Mask Rayleigh scatter bands (1st and 2nd order) from an EEM.
 
-    Sets to zero the physically impossible region (em < ex) and a symmetric
+    Sets to NaN the physically impossible region (em < ex) and a symmetric
     band around each scatter diagonal.
 
     Parameters
@@ -22,7 +22,7 @@ def remove_rayleigh(eem, ex_axis, em_axis, half_width=25):
     Returns
     -------
     np.ndarray
-        Copy of `eem` with scatter bands zeroed out.
+        Copy of `eem` (as float) with scatter bands set to NaN.
 
     Raises
     ------
